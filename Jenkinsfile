@@ -1,7 +1,9 @@
 node {
-    
+
     stage("Git Clone") {
-        git 'https://gitlab.com/ayoub.ben.idrissi/register-service.git'
+        git url: 'https://gitlab.com/ayoub.ben.idrissi/register-service.git',
+        branch: 'develop',
+        credentialsId: 'github_creds'
     }
 
     stage("Maven Build") {
@@ -28,6 +30,7 @@ node {
         sh 'docker ps'
         }
     }
+
 
     post {
         always {
