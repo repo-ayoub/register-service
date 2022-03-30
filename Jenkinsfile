@@ -1,4 +1,8 @@
 node {
+    
+    stage("Git Clone") {
+        git 'https://gitlab.com/ayoub.ben.idrissi/register-service.git'
+    }
 
     stage("Maven Build") {
         steps {
@@ -24,11 +28,6 @@ node {
         sh 'docker ps'
         }
     }
-//     stage("Docker Push") {
-//         docker.withRegistry('')
-//     }
-
-
 
     post {
         always {
