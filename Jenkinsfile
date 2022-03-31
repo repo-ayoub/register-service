@@ -1,7 +1,7 @@
 node {
 
     stage("Git Clone") {
-        git url: 'https://gitlab.com/ayoub.ben.idrissi/register-service.git',
+        git url: 'https://github.com/repo-ayoub/register-service.git',
         branch: 'develop',
         credentialsId: 'github_creds'
     }
